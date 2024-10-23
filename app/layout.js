@@ -1,7 +1,7 @@
 // /app/layout.js
 import './globals.css'; // Ensure the path is correct for your global CSS file
 
-import { Bebas_Neue, Lexend_Deca } from '@next/font/google'; // Import Google fonts
+import { Bebas_Neue, Lexend_Deca } from "next/font/google"; // Import Google fonts
 
 const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
