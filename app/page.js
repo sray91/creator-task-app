@@ -1,9 +1,9 @@
-import WeeklyPlannerChecklist from '../components/WeeklyPlannerChecklist';
+import ClientLayout from '../components/ClientLayout';
 
 export default function Home() {
   return (
-    <div>
-      <WeeklyPlannerChecklist />
-    </div>
+    <ClientLayout>
+      {/* Page content that will be handled by ClientLayout */}
+    </ClientLayout>
   );
 }

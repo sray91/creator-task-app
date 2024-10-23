@@ -1,10 +1,16 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Variables for light/dark mode */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Apply the font variables from @next/font/google */
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-lexend: 'Lexend Deca', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,10 +20,16 @@
   }
 }
 
+/* Apply the fonts globally */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lexend); /* Use Lexend Deca as the default font */
+}
+
+/* Apply Bebas Neue to specific elements */
+h1, h2 {
+  font-family: var(--font-bebas); /* Use Bebas Neue for headings */
 }
 
 @layer utilities {

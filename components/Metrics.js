@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const SocialMediaDashboard = () => {
+const Metrics = () => {
   const [xUrl, setXUrl] = useState('');
   const [linkedInUrl, setLinkedInUrl] = useState('');
   const [data, setData] = useState(null);
@@ -82,4 +82,4 @@ const SocialMediaDashboard = () => {
   );
 };
 
-export default SocialMediaDashboard;
+export default Metrics;

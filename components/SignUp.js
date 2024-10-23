@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // Import router for navigation
 import { supabase } from '../lib/supabaseClient';
 
-const SignUp = ({ onSignUp, onSwitchToLogin }) => {
+const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter(); // Initialize router
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ const SignUp = ({ onSignUp, onSwitchToLogin }) => {
       });
       if (error) throw error;
       alert('Sign up successful! Please check your email for verification.');
-      onSignUp(data.user);
+      router.push('/login'); // Redirect to login after successful signup
     } catch (error) {
       alert(error.message);
     }
@@ -24,6 +26,7 @@ const SignUp = ({ onSignUp, onSwitchToLogin }) => {
 
   return (
     <div className="space-y-4">
+      <h1 className="text-black text-3xl">Sign up!</h1>
       <form onSubmit={handleSignUp} className="space-y-4">
         <input
           type="email"
@@ -39,13 +42,13 @@ const SignUp = ({ onSignUp, onSwitchToLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-2 border rounded"
         />
-        <button type="submit" className="w-full p-2 bg-green-500 text-white rounded">
+        <button type="submit" className="w-full p-2 bg-red-600 text-white rounded">
           Sign Up
         </button>
       </form>
-      <p className="text-center">
+      <p className="text-center text-black">
         Already have an account?{' '}
-        <button onClick={onSwitchToLogin} className="text-blue-500 underline">
+        <button onClick={() => router.push('/login')} className="text-blue-500 underline">
           Log In
         </button>
       </p>
